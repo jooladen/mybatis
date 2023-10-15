@@ -21,7 +21,7 @@
 1.
 org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): org.spring.springboot2.dao.CityDao.findCityByName
 
-2.@Mapper와 @MapperScan   
+2.@Mapper와 @MapperScan    
 
 3.복사시 ** 
 src/main/resources/mapper에
