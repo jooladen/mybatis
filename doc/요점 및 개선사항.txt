@@ -23,7 +23,7 @@ org.apache.ibatis.binding.BindingException: Invalid bound statement (not found):
 
 2.@Mapper와 @MapperScan    
 
-3.복사시 ** 
+3.복사시 *** 
 src/main/resources/mapper에
 dao 또는 mapper의 Interface와 똑같이
 만들어줘야 한다
