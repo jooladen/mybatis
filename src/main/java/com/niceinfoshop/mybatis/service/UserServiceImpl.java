@@ -1,5 +1,7 @@
 package com.niceinfoshop.mybatis.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,16 @@ public class UserServiceImpl implements UserService {
 //        this.userMapper = userMapper;
 //    }
 
+	@Override
+    public List<User> getUserAll() {
+        return userMapper.getUserAll();
+    }
+	
+	@Override
+    public List<User> getUserAll2() {
+        return userMapper.getUserAll2();
+    }
+	
     @Override
     public User getUserById(Long id) {
         return userMapper.getUserById(id);

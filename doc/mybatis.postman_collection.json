@@ -89,6 +89,110 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "AllUser 컬럼 변경",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/user/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"user",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllUser table 컬럼 그대로",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/user/all2",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"user",
+						"all2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "One User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/user/all2",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"user",
+						"all2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"주영준1101010101\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/user/15",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"user",
+						"15"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

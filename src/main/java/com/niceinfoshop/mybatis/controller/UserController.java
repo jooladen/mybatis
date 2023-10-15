@@ -1,5 +1,7 @@
 package com.niceinfoshop.mybatis.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,6 +41,16 @@ public class UserController {
     public User create2(@RequestBody User user) {
         userService.createUser2(user);
         return user;
+    }
+    
+    @GetMapping("/all")
+    public List<User> getUserAll() {
+        return userService.getUserAll();
+    }
+    
+    @GetMapping("/all2")
+    public List<User> getUserAll2() {
+        return userService.getUserAll2();
     }
     
     @GetMapping("/{id}")

@@ -8,11 +8,17 @@
 	</resultMap>
 
 	<sql id="Base_Column_List">
-		id, user_name
+		id, user_name, dt
 	</sql>
 	
 	
 	<!-- SELECT query to retrieve All User -->
+	<!-- <select id="getUserAll2" resultType="com.niceinfoshop.mybatis.model.User"> -->
+    <!-- resultType이 없어도 동일하다.-->
+    <!-- resultMap="BaseResultMap" 을 지정하지 않으면 테이블 컬럼과 다른 변수는 null로 나온다.-->
+    <!-- id만 입력하면 default로 resultType="com.niceinfoshop.mybatis.model.User"-->
+    <!-- 결국 client에서 받는 값은  쿼리 컬럼이 어떻든 간에 DTO(MODEL)에  있는 변수명으로 받고 싶으면 resultMap="BaseResultMap"을 명시하라는 의미 -->
+    
     <select id="getUserAll" resultMap="BaseResultMap">
         SELECT 
         	<include refid="Base_Column_List" /> 
@@ -21,7 +27,12 @@
     </select>
     
     <!-- SELECT query to retrieve a user by ID -->
-    <select id="getUserById" resultType="com.niceinfoshop.mybatis.model.User">
+    <select id="getUserAll2">
+        SELECT * FROM user
+    </select>
+    
+    <!-- SELECT query to retrieve a user by ID -->
+    <select id="getUserById" resultMap="BaseResultMap">
         SELECT * FROM user WHERE id = #{id}
     </select>
 
