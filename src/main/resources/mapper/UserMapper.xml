@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.niceinfoshop.mybatis.mapper.UserMapper">
+
+	<resultMap id="BaseResultMap" type="com.niceinfoshop.mybatis.model.User">
+		<result column="id" property="id" />
+		<result column="user_name" property="userName" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, user_name
+	</sql>
+	
+	
+	<!-- SELECT query to retrieve All User -->
+    <select id="getUserAll" resultMap="BaseResultMap">
+        SELECT 
+        	<include refid="Base_Column_List" /> 
+          FROM 
+            user
+    </select>
+    
+    <!-- SELECT query to retrieve a user by ID -->
+    <select id="getUserById" resultType="com.niceinfoshop.mybatis.model.User">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <!-- INSERT query to create a new user -->
+    <insert id="insertUser">
+        INSERT INTO user (user_name) VALUES (#{userName})
+    </insert>
+    <!-- INSERT query to create a new user -->
+    <insert id="insertUser2" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user (user_name) VALUES (#{userName})
+    </insert>
+
+    <!-- UPDATE query to update an existing user -->
+    <update id="updateUser">
+        UPDATE user SET user_name = #{userName} WHERE id = #{id}
+    </update>
+
+    <!-- DELETE query to delete a user by ID -->
+    <delete id="deleteUser">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+
+</mapper>
