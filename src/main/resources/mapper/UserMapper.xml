@@ -5,6 +5,7 @@
 	<resultMap id="BaseResultMap" type="com.niceinfoshop.mybatis.model.User">
 		<result column="id" property="id" />
 		<result column="user_name" property="userName" />
+		<result column="dt" property="dt" />
 	</resultMap>
 
 	<sql id="Base_Column_List">
