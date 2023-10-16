@@ -1,5 +1,7 @@
 package com.niceinfoshop.mybatis.controller;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,15 @@ public class UserController {
     @PostMapping("create2")
     public User create2(@RequestBody User user) {
         userService.createUser2(user);
+        if(user.getDt() == null) {
+        	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            System.out.println(timestamp); // 생성한 timestamp 출력
+            
+            SimpleDateFormat sdf = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss");
+            System.out.println(sdf.format(timestamp)); 
+            
+            user.setDt(sdf.format(timestamp));
+        }
         return user;
     }
     
