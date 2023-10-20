@@ -16,13 +16,25 @@ public class InitSequence {
 	@Autowired
 	private CommonUtils util;
 	
+	private boolean schedulingEnabled = true;
+	
 	@Scheduled(cron = "0/3 * * * * ?")
     public void initAutoIncrement() {
-		String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
-		util.logStart(new Scheduler(), methodName);
-		
-		log.info("initAutoIncrement");
-		
-		util.logEnd(new Scheduler(), methodName);
+		if (schedulingEnabled) {
+			String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+			util.logStart(new Scheduler(), methodName);
+			
+			log.info("initAutoIncrement");
+			
+			util.logEnd(new Scheduler(), methodName);
+		}
 	}
+
+    public void disableScheduling() {
+        schedulingEnabled = false;
+    }
+
+    public void enableScheduling() {
+        schedulingEnabled = true;
+    }
 }
