@@ -6,3 +6,4 @@
 # CRUD
 # transactional
 # job scheduler
+# swagger 3.0
