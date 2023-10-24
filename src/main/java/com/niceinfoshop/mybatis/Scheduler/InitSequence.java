@@ -10,7 +10,7 @@ import com.niceinfoshop.mybatis.util.CommonUtils;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@EnableScheduling
+//@EnableScheduling 주석 해제해야 작동
 @Component
 public class InitSequence {
 	@Autowired

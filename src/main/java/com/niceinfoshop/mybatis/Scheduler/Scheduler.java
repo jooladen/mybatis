@@ -10,7 +10,7 @@ import com.niceinfoshop.mybatis.util.CommonUtils;
 import lombok.extern.slf4j.Slf4j;
 //import com.niceinfoshop.mybatis.util.CommonUtils;;
 @Slf4j
-@EnableScheduling
+//@EnableScheduling 주석해제해야 작동
 @Component
 //@Controller
 //@Repository
